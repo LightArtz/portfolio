@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Kelson Vincien</title>
-        <meta name="description" content="Portfolio of Kelson Vincien, Data Analyst and Python & SQL Developer" />
+        <title>Kelson Vincien - Data Analyst Portfolio</title>
+        <meta name="description" content="Explore the data analysis and web development portfolio of Kelson Vincien, showcasing projects in Python, SQL, Tableau, and Next.js." />
         <style>{`
           html {
             font-family: ${GeistSans.style.fontFamily};
