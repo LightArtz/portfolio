@@ -72,7 +72,7 @@ export default function ProjectDetailPage({
             className="text-white hover:text-gray-300 transition-colors p-2"
             aria-label="Close project details"
           >
-            <X size={32} className="md:w-10 md:h-10" />
+            <X size={32} className="md:w-10 md:h-10 cursor-pointer" />
           </button>
         </div>
 

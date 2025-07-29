@@ -4,6 +4,7 @@ import type React from "react"
 import { useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
 
 // Define a matching Project type
 interface Project {
@@ -45,7 +46,8 @@ const projects: Project[] = [
 ]
 
 export default function SelectedProjects({ onProjectClick }: { onProjectClick: (project: Project) => void }) {
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null)
+  const [hoveredProject, setHoveredProject] = useState<{ id: string; index: number } | null>(null)
+  const [direction, setDirection] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -55,21 +57,52 @@ export default function SelectedProjects({ onProjectClick }: { onProjectClick: (
       setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top })
     }
   }
-  const handleMouseEnter = (projectId: string) => setHoveredProject(projectId)
+  const handleMouseEnter = (projectId: string, index: number) => {
+    if (hoveredProject) {
+      setDirection(index > hoveredProject.index ? 1 : -1);
+    }
+    setHoveredProject({ id: projectId, index });
+  };
   const handleMouseLeave = () => setHoveredProject(null)
 
+  const variants = {
+    enter: (direction: number) => ({
+      y: direction > 0 ? 50 : -50,
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      zIndex: 1,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      y: direction < 0 ? 50 : -50,
+      opacity: 0,
+      scale: 0.9,
+    }),
+  };
+
   return (
-    <section className="bg-[var(--background)] text-white min-h-screen py-20 px-6 md:px-12 lg:px-20">
+    <motion.section 
+        className="bg-[var(--background)] text-white py-20 px-6 md:px-12 lg:px-20"
+        initial={{ opacity: 0, y: 75 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        viewport={{ once: true }}
+    >
       <div ref={containerRef} className="max-w-6xl mx-auto relative" onMouseMove={handleMouseMove}>
-        <h2 className="text-2xl md:text-3xl font-normal text-center mb-20">Selected Projects</h2>
+        <h2 className="text-4xl md:text-4xl font-bold text-white text-center mb-20">Selected Projects</h2>
         <div className="space-y-0">
           {projects.map((project, index) => (
             <div key={project.id} onClick={() => onProjectClick(project)}>
               <div
                 className={`flex items-center py-8 md:py-12 cursor-pointer transition-all duration-300 min-h-[100px] md:min-h-[120px] ${
-                  hoveredProject === project.id ? "text-white" : "text-gray-400"
+                  hoveredProject?.id === project.id ? "text-white" : "text-gray-400"
                 }`}
-                onMouseEnter={() => handleMouseEnter(project.id)}
+                onMouseEnter={() => handleMouseEnter(project.id, index)}
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="text-lg md:text-xl font-mono w-16 md:w-20 flex items-center">{project.number}</div>
@@ -88,22 +121,34 @@ export default function SelectedProjects({ onProjectClick }: { onProjectClick: (
           ))}
         </div>
 
-        {hoveredProject && (
-          <div
-            className="fixed pointer-events-none z-50 animate-in fade-in duration-300"
-            style={{ left: mousePosition.x + 20, top: mousePosition.y - 100 }}
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
-              <Image
-                src={projects.find((p) => p.id === hoveredProject)?.previewImage || ""}
-                alt={`${projects.find((p) => p.id === hoveredProject)?.title} preview`}
-                width={300}
-                height={200}
-                className="rounded-xl object-cover"
-              />
-            </div>
-          </div>
-        )}
+        <AnimatePresence initial={false} custom={direction}>
+          {hoveredProject && (
+            <motion.div
+              key={hoveredProject.id}
+              className="fixed pointer-events-none z-50"
+              style={{ left: mousePosition.x + 20, top: mousePosition.y - 100 }}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                y: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+            >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
+                <Image
+                  src={projects.find((p) => p.id === hoveredProject.id)?.previewImage || ""}
+                  alt={`${projects.find((p) => p.id === hoveredProject.id)?.title} preview`}
+                  width={300}
+                  height={200}
+                  className="rounded-xl object-cover"
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="text-center mt-20">
           <Link
             href="/projects"
@@ -113,6 +158,6 @@ export default function SelectedProjects({ onProjectClick }: { onProjectClick: (
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

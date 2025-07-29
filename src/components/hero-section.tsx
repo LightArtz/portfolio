@@ -1,9 +1,15 @@
 import type React from "react"
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-[var(--background)] relative overflow-hidden">
+    <motion.section
+      className="min-h-screen bg-[var(--background)] relative overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-50"
@@ -105,7 +111,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
