@@ -6,21 +6,21 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { useState } from "react"
 
-import { FaPython, FaReact, FaDocker, FaAws, FaGitAlt, FaGithub, FaJira } from "react-icons/fa";
+import { FaPython, FaReact, FaDocker, FaGitAlt, FaGithub, } from "react-icons/fa";
 import {
   SiPandas,
   SiNumpy,
   SiScikitlearn,
-  SiTableau,
+  // SiTableau,
   SiPostgresql,
   SiNextdotjs,
   SiJupyter,
   SiTailwindcss,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
-import { TbCircleChevronsRight } from "react-icons/tb";
-import { VscCheckAll } from "react-icons/vsc";
-import { IoAnalytics } from "react-icons/io5";
+// import { TbCircleChevronsRight } from "react-icons/tb";
+// import { VscCheckAll } from "react-icons/vsc";
+// import { IoAnalytics } from "react-icons/io5";
 
 interface Skill {
   name: string
@@ -44,52 +44,50 @@ interface Testimonial {
 
 const skillsData: SkillCard[] = [
   {
-    title: "Data Analysis & Python",
+    title: "Data Analysis & Databases",
     description:
-      "I leverage Python's powerful libraries to clean, transform, analyze, and model data, extracting valuable insights from complex datasets.",
+      "Proficient in extracting and manipulating data using SQL, and leveraging Python's powerful libraries to perform in-depth cleaning, transformation, and analysis on complex datasets.",
     skills: [
       { name: "Python", icon: <FaPython />, color: "#3776AB" },
       { name: "Pandas", icon: <SiPandas />, color: "#150458" },
       { name: "NumPy", icon: <SiNumpy />, color: "#4D77CF" },
       { name: "Scikit-learn", icon: <SiScikitlearn />, color: "#F7931E" },
       { name: "SQL", icon: <GrMysql />, color: "#4479A1" },
+      { name: "PostgreSQL", icon: <SiPostgresql />, color: "#4169E1" },
       { name: "Jupyter", icon: <SiJupyter />, color: "#F37626" },
     ],
   },
   {
-    title: "Data Visualization & Frontend",
+    title: "Data Visualization",
     description:
-      "I'm passionate about building intuitive dashboards and reports that clearly communicate data-driven stories. I also have experience with frontend frameworks for displaying data.",
+      "Passionate about building intuitive dashboards and compelling data narratives. I specialize in transforming raw numbers into clear, actionable stories that drive business decisions.",
     skills: [
-      { name: "Tableau", icon: <SiTableau />, color: "#E97627" },
-      { name: "Matplotlib", icon: <IoAnalytics />, color: "#8B008B" },
-      { name: "Seaborn", icon: <IoAnalytics />, color: "#4c72b0" },
-      { name: "React", icon: <FaReact />, color: "#61DAFB" },
-      { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
-      { name: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
+      { name: "Tableau", icon: "/icon/2-Tableau.svg", color: "#E97627" },
+      { name: "Matplotlib", icon: "/icon/2-Matplotlib.svg", color: "#8B008B" },
+      { name: "Seaborn", icon: "/icon/2-Seaborn.svg", color: "#4c72b0" },
     ],
   },
   {
-    title: "Databases & Cloud",
+    title: "Full-Stack Development",
     description:
-      "Proficient in designing and querying relational databases, and familiar with deploying and managing applications on major cloud platforms.",
+      "My experience in full-stack development provides a unique perspective on the entire data lifecycle. I can not only analyze data but also build the applications that generate it and the solutions to display insights.",
     skills: [
-      { name: "PostgreSQL", icon: <SiPostgresql />, color: "#4169E1" },
-      { name: "MySQL", icon: <GrMysql />, color: "#4479A1" },
-      { name: "AWS", icon: <FaAws />, color: "#FF9900" },
+      { name: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
+      { name: "React", icon: <FaReact />, color: "#61DAFB" },
+      { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
       { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
     ],
   },
   {
     title: "Project Management & Tools",
     description:
-      "I have experience leading web development projects, managing client expectations, and steering projects to completion using Agile methodologies.",
+      "Experienced in leading technical projects using Agile methodologies. I focus on clear communication to ensure that analytical projects deliver timely and relevant business value.",
     skills: [
-      { name: "Agile", icon: <TbCircleChevronsRight />, color: "#654FF0" },
-      { name: "Scrum", icon: <VscCheckAll />, color: "#654FF0" },
-      { name: "Jira", icon: <FaJira />, color: "#0052CC" },
       { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
       { name: "GitHub", icon: <FaGithub />, color: "#FFFFFF" },
+      { name: "Agile", icon: "/icon/4-Agile.png", color: "#654FF0" },
+      { name: "Scrum", icon: "/icon/4-Scrum2.png" },
+      { name: "Jira", icon: "/icon/4-Jira.svg", color: "#0052CC" },
     ],
   },
 ];
@@ -97,27 +95,27 @@ const skillsData: SkillCard[] = [
 const testimonialsData: Testimonial[] = [
   {
     quote:
-      "Kelson is an exceptionally talented and motivated analyst. His ability to dissect complex problems and present data in a clear, actionable way was a great addition to our team.",
-    author: "Jane Doe",
-    title: "Senior Data Scientist",
-    company: "Tech Solutions Inc.",
-    image: "/placeholder-user-1.jpg", // Replace with actual image path
+      ":D",
+    author: "Someone",
+    title: "CEO",
+    company: "Big Company",
+    image: "/placeholder-user-1.jpg", 
   },
   {
     quote:
-      "Working with Kelson on the Geo Vest project was a pleasure. His project management skills and technical expertise in both web development and machine learning were instrumental to our success.",
-    author: "John Smith",
-    title: "Product Manager",
-    company: "Innovate Co.",
-    image: "/placeholder-user-2.jpg", // Replace with actual image path
+      ":)",
+    author: "Someone",  
+    title: "CEO",
+    company: "Big Company",
+    image: "/placeholder-user-1.jpg", 
   },
-    {
+  {
     quote:
-      "Working with Kelson on the Geo Vest project was a pleasure. His project management skills and technical expertise in both web development and machine learning were instrumental to our success.",
-    author: "John Smith",
-    title: "Product Manager",
-    company: "Innovate Co.",
-    image: "/placeholder-user-2.jpg", // Replace with actual image path
+      ":))",
+    author: "Someone",
+    title: "CEO",
+    company: "Big Company",
+    image: "/placeholder-user-1.jpg", 
   },
 ];
 
@@ -199,9 +197,18 @@ export default function SkillsSection() {
                     onMouseEnter={(e) => handleSkillHover(skill, e)}
                     onMouseLeave={handleSkillLeave}
                   >
-                    <span className="text-4xl" style={{ color: skill.color }}>
+                    {typeof skill.icon === 'string' ? (
+                      <Image
+                        src={skill.icon}
+                        alt={`${skill.name} logo`}
+                        width={36}
+                        height={36}
+                      />
+                    ) : (
+                      <span className="text-4xl" style={{ color: skill.color }}>
                         {skill.icon}
-                    </span>
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>

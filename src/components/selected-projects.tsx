@@ -22,27 +22,39 @@ interface Project {
 // Updated project data with the correct structure
 const projects: Project[] = [
   {
-    id: "layarnusantara",
+    id: "salesandcustomerdashboard",
     number: "01",
-    title: "Layar Nusantara",
-    category: "Web Development / Management",
-    technologies: { "Frontend": "Next.js, TailwindCSS", "Backend": "Supabase" },
-    previewImage: "/project-1-preview.png",
-    description: "Layar Nusantara is a platform for discovering Indonesian culture and travel destinations.",
-    liveProjectUrl: "https://layar-nusantara.vercel.app/",
-    galleryImageUrls: ["/project-1-preview.png"],
+    title: "Executive Sales & Customer Dashboard",
+    category: "Business Intelligence, Data Visualization, Sales Analytics",
+    technologies: { "Data Visualization": "Tableau" },
+    previewImage: "/1/1.png",
+    description: "Developed a comprehensive, dual-view executive dashboard in Tableau to analyze complex sales and customer data. The interactive tool tracks key performance indicators (KPIs) and year-over-year growth, providing actionable insights into product performance and customer behavior.",
+    liveProjectUrl: "https://public.tableau.com/app/profile/kelson.vincien/viz/SalesandCustomerDashboard_17538908882010/SalesDashboard?publish=yes",
+    galleryImageUrls: ["/1/1.png", "/1/2.png", "/1/3.png", "/1/4.png"],
   },
   {
     id: "geovest",
     number: "02",
-    title: "Geo Vest",
-    category: "Web Development / Machine Learning",
-    technologies: { "Frontend": "React", "Backend": "Python (Flask)", "ML": "Scikit-learn" },
-    previewImage: "/project-2-preview.png",
-    description: "Geo Vest uses machine learning to analyze geographical data for investment opportunities.",
+    title: "GeoVest: AI-Powered Property Investment Analysis",
+    category: "Geospatial Analytics / Full-Stack Development",
+    technologies: { "Frontend": "Next.js, Leaflet.js, Maplibre", "Backend": "Python, Supabase", "ML": "XGBoost, LLM, MCDA", "Collaboration": "Github" },
+    previewImage: "/3/6.png",
+    description: "An award-winning web application that empowers users to make smarter property investment decisions using AI and geospatial analytics. GeoVest provides an interactive map with deep filtering, historical trends, and a predictive ROI calculator. This project secured 3rd place in the national MAPID competition.",
     liveProjectUrl: "https://capycapy.mapid.co.id/",
-    galleryImageUrls: ["/project-2-preview.png"],
+    galleryImageUrls: ["/3/1.png", "/3/2.png", "/3/3.png", "/3/4.png", "/3/5.png", "/3/6.png"],
   },
+  {
+    id: "layarnusantara",
+    number: "03",
+    title: "Layar Nusantara",
+    category: "Web Development / Management",
+    technologies: { "Frontend": "Next.js, TailwindCSS", "Backend": "Supabase", "Collaboration": "Github" },
+    previewImage: "/project-1-preview.png",
+    description: "Led the development and management of Layar Nusantara, a full-stack web application designed to promote Indonesian culture and tourism. The platform provides a rich, interactive guide to the country's diverse travel destinations, built on a modern stack including Next.js, TailwindCSS, and Supabase.",
+    liveProjectUrl: "https://layar-nusantara.vercel.app/",
+    galleryImageUrls: ["/2/1.png", "/2/3.png", "/2/2.png", "/2/4.png", "/2/5.png", "/2/6.png"],
+  },
+
 ]
 
 export default function SelectedProjects({ onProjectClick }: { onProjectClick: (project: Project) => void }) {
@@ -107,7 +119,7 @@ export default function SelectedProjects({ onProjectClick }: { onProjectClick: (
               >
                 <div className="text-lg md:text-xl font-mono w-16 md:w-20 flex items-center">{project.number}</div>
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold" style={{ fontWeight: 700 }}>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ fontWeight: 700 }}>
                     {project.title}
                   </h3>
                 </div>
@@ -137,12 +149,12 @@ export default function SelectedProjects({ onProjectClick }: { onProjectClick: (
                 opacity: { duration: 0.2 },
               }}
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-2 shadow-2xl">
                 <Image
                   src={projects.find((p) => p.id === hoveredProject.id)?.previewImage || ""}
                   alt={`${projects.find((p) => p.id === hoveredProject.id)?.title} preview`}
                   width={300}
-                  height={200}
+                  height={300}
                   className="rounded-xl object-cover"
                 />
               </div>

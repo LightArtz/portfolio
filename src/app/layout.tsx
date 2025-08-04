@@ -23,7 +23,7 @@ export default function RootLayout({
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1900);
+    }, 2900); // changed from 1900 to 2900
 
     return () => clearTimeout(timer);
   }, []);

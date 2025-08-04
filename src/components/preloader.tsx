@@ -30,7 +30,7 @@ export default function Preloader() {
 
         const timeoutId = setTimeout(() => {
             setIndex(index + 1)
-        }, index === 0 ? 1000 : 150);
+        }, index === 0 ? 2000 : 150);
 
         return () => clearTimeout(timeoutId);
     }, [index]);
@@ -40,14 +40,14 @@ export default function Preloader() {
             variants={slideUp}
             initial="initial"
             exit="exit"
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.2 }} // changed from 0.5 to 1
             className="h-screen w-screen flex items-center justify-center bg-black fixed z-50"
         >
             <motion.p
                 variants={opacity}
                 initial="initial"
                 animate="enter"
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.2 }} // changed from 0.5 to 1
                 className="flex items-center text-white text-4xl md:text-6xl"
             >
                 {words[index]}

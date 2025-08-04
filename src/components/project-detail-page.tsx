@@ -60,7 +60,7 @@ export default function ProjectDetailPage({
                 href={liveProjectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-colors mt-2"
+                className="text-white hover:text-gray-300 transition-colors mr-5"
                 aria-label="Open project in new tab"
               >
                 <ExternalLink size={32} className="md:w-10 md:h-10" />
@@ -106,12 +106,12 @@ export default function ProjectDetailPage({
             <h2 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-8">IMAGE GALLERY</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {galleryImageUrls.map((imageUrl, index) => (
-                <div key={index} className="relative aspect-[4/3] rounded-lg overflow-hidden bg-gray-900">
+                <div key={index} className="relative aspect-[18/11] rounded-lg overflow-hidden bg-gray-900">
                   <Image
                     src={imageUrl || "/placeholder.svg"}
                     alt={`${title} screenshot ${index + 1}`}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    className="hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
