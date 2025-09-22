@@ -43,24 +43,24 @@ export default function HeroSection() {
           {/* Right Column - Text Content */}
           <div className="text-white space-y-6 order-2 lg:order-2 text-center lg:text-left">
             {/* Small intro line */}
-            <p className="text-gray-300 text-lg md:text-xl font-light font-inter">I am Kelson Vincien, and I enjoy...</p>
+            <p className="text-gray-300 text-lg md:text-xl font-light font-inter">I am Kelson Vincien, and I specialize in...</p>
 
             {/* Combined large headline */}
             <div className="space-y-2">
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight font-inter">
-                Turning raw data into
+                Building robust and scalable
               </h1>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight font-inter">
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  Actionable business insights
+                  Data Pipelines
                 </span>
               </h1>
             </div>
 
             {/* Job title */}
             <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium mt-8 font-inter">
-              Data Analyst / Python & SQL Developer
+              Data Engineer / Python & SQL Developer
             </h2>
 
             {/* Social links */}
@@ -112,7 +112,7 @@ export default function HeroSection() {
         </div>
       </div>
     </motion.section>
-  )
+      )
 }
 
 interface SocialIconProps {

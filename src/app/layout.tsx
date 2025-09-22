@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Kelson Vincien - Data Analyst Portfolio</title>
-        <meta name="description" content="Explore the data analysis and web development portfolio of Kelson Vincien, showcasing projects in Python, SQL, Tableau, and Next.js." />
+        <title>Kelson Vincien - Data Engineer Portfolio</title>
+        <meta name="description" content="The portfolio of Kelson Vincien, a Data Engineer specializing in building and maintaining scalable data pipelines and infrastructure. Explore projects featuring Python, SQL, Spark, and cloud technologies." />
         <style>{`
           html {
             font-family: ${GeistSans.style.fontFamily};
@@ -40,7 +40,7 @@ export default function RootLayout({
             --font-mono: ${GeistMono.variable};
           }
         `}</style>
-      </head>
+    </head>
       <body className={inter.className}>
         <AnimatePresence 
           mode="wait"

@@ -22,8 +22,19 @@ interface Project {
 // Updated project data with the correct structure
 const projects: Project[] = [
   {
-    id: "salesandcustomerdashboard",
+    id: "sqlDataWarehouse",
     number: "01",
+    title: "End-to-End SQL Data Warehouse",
+    category: "Data Engineering / ETL",
+    technologies: { "Data Pipeline": "SQL, PostgreSQL" },
+    previewImage: "/4/1.jpg",
+    description: "Designed and built a complete data warehouse from scratch for a fictional e-commerce company. This project involved creating a multi-layered architecture (Bronze, Silver, Gold) and developing ETL procedures to integrate disparate data from CRM and ERP systems into a unified dimensional model.",
+    liveProjectUrl: "https://github.com/LightArtz/sql-data-warehouse",
+    galleryImageUrls: ["/4/1.jpg", "/4/2.jpg", "/4/3.jpg", "/4/4.jpg"],
+  },
+  {
+    id: "salesandcustomerdashboard",
+    number: "02",
     title: "Executive Sales & Customer Dashboard",
     category: "Business Intelligence, Data Visualization, Sales Analytics",
     technologies: { "Data Visualization": "Tableau" },
@@ -34,7 +45,7 @@ const projects: Project[] = [
   },
   {
     id: "geovest",
-    number: "02",
+    number: "03",
     title: "GeoVest: AI-Powered Property Investment Analysis",
     category: "Geospatial Analytics / Full-Stack Development",
     technologies: { "Frontend": "Next.js, Leaflet.js, Maplibre", "Backend": "Python, Supabase", "ML": "XGBoost, LLM, MCDA", "Collaboration": "Github" },
@@ -45,11 +56,11 @@ const projects: Project[] = [
   },
   {
     id: "layarnusantara",
-    number: "03",
+    number: "04",
     title: "Layar Nusantara",
     category: "Web Development / Management",
     technologies: { "Frontend": "Next.js, TailwindCSS", "Backend": "Supabase", "Collaboration": "Github" },
-    previewImage: "/project-1-preview.png",
+    previewImage: "/2/1.png",
     description: "Led the development and management of Layar Nusantara, a full-stack web application designed to promote Indonesian culture and tourism. The platform provides a rich, interactive guide to the country's diverse travel destinations, built on a modern stack including Next.js, TailwindCSS, and Supabase.",
     liveProjectUrl: "https://layar-nusantara.vercel.app/",
     galleryImageUrls: ["/2/1.png", "/2/3.png", "/2/2.png", "/2/4.png", "/2/5.png", "/2/6.png"],
@@ -98,7 +109,7 @@ export default function SelectedProjects({ onProjectClick }: { onProjectClick: (
   };
 
   return (
-    <motion.section 
+    <motion.section
         className="bg-[var(--background)] text-white py-20 px-6 md:px-12 lg:px-20"
         initial={{ opacity: 0, y: 75 }}
         whileInView={{ opacity: 1, y: 0 }}
