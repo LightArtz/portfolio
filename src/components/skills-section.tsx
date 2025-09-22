@@ -6,21 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { useState } from "react"
 
-import { FaPython, FaReact, FaDocker, FaGitAlt, FaGithub, } from "react-icons/fa";
+import { FaPython, FaDocker, FaAws, FaGitAlt, FaGithub, } from "react-icons/fa";
 import {
   SiPandas,
   SiNumpy,
-  SiScikitlearn,
-  // SiTableau,
+  // SiScikitlearn,
   SiPostgresql,
-  SiNextdotjs,
-  SiJupyter,
-  SiTailwindcss,
+  // SiNextdotjs,
+  // SiJupyter,
+  // SiTailwindcss,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
-// import { TbCircleChevronsRight } from "react-icons/tb";
-// import { VscCheckAll } from "react-icons/vsc";
-// import { IoAnalytics } from "react-icons/io5";
 
 interface Skill {
   name: string
@@ -44,20 +40,31 @@ interface Testimonial {
 
 const skillsData: SkillCard[] = [
   {
-    title: "Data Analysis & Databases",
+    title: "Data Engineering & Databases",
     description:
-      "Proficient in extracting and manipulating data using SQL, and leveraging Python's powerful libraries to perform in-depth cleaning, transformation, and analysis on complex datasets.",
+      "Proficient in building and managing data systems. I specialize in Python and SQL to design ETL processes, model data warehouses, and ensure data integrity from source to destination.",
     skills: [
-      { name: "Python", icon: <FaPython />, color: "#3776AB" },
-      { name: "Pandas", icon: <SiPandas />, color: "#150458" },
-      { name: "NumPy", icon: <SiNumpy />, color: "#4D77CF" },
-      { name: "Scikit-learn", icon: <SiScikitlearn />, color: "#F7931E" },
-      { name: "SQL", icon: <GrMysql />, color: "#4479A1" },
-      { name: "PostgreSQL", icon: <SiPostgresql />, color: "#4169E1" },
-      { name: "Jupyter", icon: <SiJupyter />, color: "#F37626" },
+      { name: "Python", icon: "/icon/language/python.svg", color: "#3776AB" },
+      { name: "SQL", icon: "/icon/language/sql.svg", color: "#4479A1" },
+      { name: "PostgreSQL", icon: "/icon/language/postgresql.svg", color: "#4169E1" },
+      { name: "Pandas", icon: "/icon/language/pandas.svg", color: "#150458" },
+      { name: "NumPy", icon: "/icon/language/numpy.svg", color: "#4D77CF" },
+      { name: "Docker", icon: "/icon/language/docker.svg", color: "#2496ED" },
     ],
   },
   {
+    title: "Orchestration & Big Data Technologies",
+    description:
+      "Familiar with foundational concepts of modern data stack tools. I have a working knowledge of orchestrating workflows and processing large datasets using industry-standard technologies.",
+    skills: [
+      { name: "Apache Airflow", icon: "/icon/de/airflow.svg", color: "#00d1c1" },
+      { name: "Apache Spark", icon: "/icon/de/spark.svg", color: "#E25A1C" },
+      { name: "Databricks", icon: "/icon/de/databricks.svg", color: "#FF3621" },
+      { name: "AWS (S3, EC2)", icon: <FaAws />, color: "#FF9900" },
+      // { name: "Hadoop", icon: "/icon/de/hadoop.svg", color: "#f9e01e" },
+    ],
+  },
+    {
     title: "Data Visualization",
     description:
       "Passionate about building intuitive dashboards and compelling data narratives. I specialize in transforming raw numbers into clear, actionable stories that drive business decisions.",
@@ -68,20 +75,9 @@ const skillsData: SkillCard[] = [
     ],
   },
   {
-    title: "Full-Stack Development",
+    title: "Development & Project Management",
     description:
-      "My experience in full-stack development provides a unique perspective on the entire data lifecycle. I can not only analyze data but also build the applications that generate it and the solutions to display insights.",
-    skills: [
-      { name: "Next.js", icon: <SiNextdotjs />, color: "#FFFFFF" },
-      { name: "React", icon: <FaReact />, color: "#61DAFB" },
-      { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
-      { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
-    ],
-  },
-  {
-    title: "Project Management & Tools",
-    description:
-      "Experienced in leading technical projects using Agile methodologies. I focus on clear communication to ensure that analytical projects deliver timely and relevant business value.",
+      "Experienced in version control and agile methodologies. I focus on clear communication and efficient workflows to ensure that data projects deliver timely and relevant business value.",
     skills: [
       { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
       { name: "GitHub", icon: <FaGithub />, color: "#FFFFFF" },
