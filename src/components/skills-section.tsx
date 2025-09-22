@@ -2,7 +2,8 @@
 
 import type React from "react"
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
 
 import { useState } from "react"
 
@@ -20,6 +21,8 @@ interface SkillCard {
   skills: Skill[]
 }
 
+// I've commented out the Testimonial interface as it's no longer used.
+/*
 interface Testimonial {
   quote: string
   author: string
@@ -27,6 +30,7 @@ interface Testimonial {
   company: string
   image: string
 }
+*/
 
 const skillsData: SkillCard[] = [
   {
@@ -78,6 +82,8 @@ const skillsData: SkillCard[] = [
   },
 ];
 
+// I've commented out the placeholder testimonial data.
+/*
 const testimonialsData: Testimonial[] = [
   {
     quote:
@@ -104,9 +110,13 @@ const testimonialsData: Testimonial[] = [
     image: "/placeholder-user-1.jpg", 
   },
 ];
+*/
 
 export default function SkillsSection() {
   const [hoveredSkill, setHoveredSkill] = useState<{ name: string; x: number; y: number } | null>(null)
+  
+  // I've commented out the state and variants related to the testimonial slider.
+  /*
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [direction, setDirection] = useState(0)
 
@@ -126,6 +136,7 @@ export default function SkillsSection() {
       opacity: 0,
     }),
   };
+  */
 
   const handleSkillHover = (skill: Skill, event: React.MouseEvent) => {
     const rect = event.currentTarget.getBoundingClientRect()
@@ -202,7 +213,8 @@ export default function SkillsSection() {
           ))}
         </div>
         
-        {/* --- TESTIMONIALS SECTION (REVISED) --- */}
+        {/* --- I've commented out the entire testimonial section below --- */}
+        {/*
         <div className="my-40 text-center">
             <h2 className="text-4xl md:text-4xl font-bold text-white text-center mb-15">Testimonials</h2>
             
@@ -246,7 +258,6 @@ export default function SkillsSection() {
                 </AnimatePresence>
             </div>
 
-            {/* Pagination Dots */}
             <div className="flex justify-center gap-3 mt-12">
                 {testimonialsData.map((_, index) => (
                     <button
@@ -266,8 +277,8 @@ export default function SkillsSection() {
                 ))}
             </div>
         </div>
+        */}
         
-
       </div>
 
       {/* Tooltip */}
