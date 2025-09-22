@@ -6,17 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { useState } from "react"
 
-import { FaPython, FaDocker, FaAws, FaGitAlt, FaGithub, } from "react-icons/fa";
-import {
-  SiPandas,
-  SiNumpy,
-  // SiScikitlearn,
-  SiPostgresql,
-  // SiNextdotjs,
-  // SiJupyter,
-  // SiTailwindcss,
-} from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
+import { FaAws, FaGitAlt, FaGithub, } from "react-icons/fa";
 
 interface Skill {
   name: string
