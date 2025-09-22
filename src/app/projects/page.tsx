@@ -14,6 +14,24 @@ import Link from "next/link";
 const projects = [
   {
     id: 1,
+    name: "End-to-End SQL Data Warehouse",
+    technologies: ["SQL", "PostgreSQL", "ETL"],
+    liveUrl: null,
+    sourceUrl: "https://github.com/LightArtz/sql-data-warehouse",
+    type: "Data Warehouse",
+    availability: ["Open Source"],
+  },
+  {
+    id: 2,
+    name: "Study2Challenge Hackathon Platform",
+    technologies: ["React", "Vite", "Node.js", "Express.js", "PostgreSQL"],
+    liveUrl: "https://www.study2challenge.bslc.or.id",
+    sourceUrl: "https://github.com/binusstudentlearningcommunity/study2challenge",
+    type: "Visualization",
+    availability: ["Live", "Open Source"],
+  },
+  {
+    id: 3,
     name: "Game Analysis Dashboard",
     technologies: ["Tableau"],
     liveUrl: "https://public.tableau.com/views/GlobalVideoGameAnalysis/GameAnalysisDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
@@ -22,7 +40,7 @@ const projects = [
     availability: ["Live"],
   },
   {
-    id: 2,
+    id: 4,
     name: "Maven Roasters: Sales & Customer Behavior Dashboard",
     technologies: ["Tableau"],
     liveUrl: "https://public.tableau.com/views/MAVENROASTERSSALESCUSTOMERBEHAVIORDASHBOARD/MavenRoastersSalesCustomerBehaviorDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
@@ -31,7 +49,7 @@ const projects = [
     availability: ["Live"],
   },
   {
-    id: 3,
+    id: 5,
     name: "Spotify Dashboard",
     technologies: ["Tableau"],
     liveUrl: "https://public.tableau.com/app/profile/augusto.jonathan6027/viz/shared/P9SGKRG94",
@@ -40,7 +58,16 @@ const projects = [
     availability: ["Live"],
   },
   {
-    id: 4,
+    id: 11,
+    name: "Layar Nusantara",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+    liveUrl: "https://layar-nusantara.vercel.app/",
+    sourceUrl: null,
+    type: "Web3",
+    availability: ["Live"],
+  },
+  {
+    id: 6,
     name: "Socially",
     technologies: ["Next.js", "Tailwind CSS", "Supabase" ],
     liveUrl: "https://socially-two-dun.vercel.app/",
@@ -49,7 +76,7 @@ const projects = [
     availability: ["Live", "Open Source"],
   },
   {
-    id: 5,
+    id: 7,
     name: "Interactive Analysis of Jakarta's Air Quality",
     technologies: ["Tableau"],
     liveUrl: "https://public.tableau.com/shared/77RGC6HS6?:display_count=n&:origin=viz_share_linkk",
@@ -58,7 +85,7 @@ const projects = [
     availability: ["Live"],
   },
   {
-    id: 6,
+    id: 8,
     name: "E-Learning BSLC",
     technologies: ["Laravel", "HTML", "CSS", "Github"],
     liveUrl: "https://elearning.bslc.or.id/",
@@ -67,7 +94,7 @@ const projects = [
     availability: ["Live"],
   },
   {
-    id: 7,
+    id: 9,
     name: "Sentiment Analyzer",
     technologies: ["Python", "Next.js", "Tailwind CSS"],
     liveUrl: null,
@@ -76,7 +103,7 @@ const projects = [
     availability: ["Open Source"],
   },
   {
-    id: 8,
+    id: 10,
     name: "CapyNion",
     technologies: ["Python", "React", "Tailwind CSS", "Motoko"],
     liveUrl: null,
