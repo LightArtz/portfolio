@@ -93,20 +93,28 @@ export default function HeroSection() {
                 }
                 label="Email"
               />
-              <SocialIcon
-                href="/Kelson Vincien_CV.pdf"
-                icon={
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14,2 14,8 20,8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10,9 9,9 8,9" />
-                    <path d="M12 15l-3 3 3 3" />
+              <div className="flex items-center gap-4">
+                <SocialIcon
+                    href="/CV - Kelson Vincien.pdf"
+                    icon={
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10,9 9,9 8,9" />
+                        </svg>
+                    }
+                    label="CV"
+                />
+                <div className="flex items-center gap-2 text-white/90">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
                   </svg>
-                }
-                label="Resume"
-              />
+                  <span className="font-extrabold text-xl">CV</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -131,6 +139,10 @@ function SocialIcon({ href, icon, label }: SocialIconProps) {
       aria-label={label}
     >
       <span className="group-hover:brightness-125 transition-all duration-300">{icon}</span>
+
+      <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black/80 text-white text-xs font-semibold rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        {label}
+      </span>
     </a>
   )
 }
