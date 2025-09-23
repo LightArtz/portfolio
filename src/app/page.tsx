@@ -6,6 +6,7 @@ import SelectedProjects from "../components/selected-projects"
 import ProjectDetailPage from "../components/project-detail-page"
 import SkillsSection from "../components/skills-section"
 import Footer from "../components/footer";
+import ExperienceSection from "@/components/experience-section"
 
 // Define the corrected Project interface
 interface Project {
@@ -34,6 +35,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <ExperienceSection />
       <SelectedProjects onProjectClick={handleProjectClick} />
       <SkillsSection />
       {selectedProject && (
