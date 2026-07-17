@@ -6,7 +6,7 @@ import { Briefcase, School } from "lucide-react"
 const experienceData = [
   {
     icon: <Briefcase />,
-    company: "PT Cyberindo Aditama (CBN) — Technology Development Division | Jakarta, Indonesia",
+    company: "PT Cyberindo Aditama (CBN) — Technology Development Division",
     role: "Data Engineer Intern",
     period: "Feb 2026 – Present",
     description: [
