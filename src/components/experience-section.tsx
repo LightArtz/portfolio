@@ -4,21 +4,33 @@ import { motion, type Variants } from "framer-motion"
 import { Briefcase, School } from "lucide-react"
 
 const experienceData = [
-    {
-      icon: <Briefcase />,
-      company: "Timedoor Academy",
-      role: "Programming Teacher",
-      period: "September 2025 – Present",
-      description: [
-        "Taught fundamental programming concepts using Python, Scratch, and Roblox to a diverse age range of students (5-18) in small classes of 4-5.",
-        "Excelled at simplifying complex technical topics and adapting teaching methods to different learning levels and age groups.",
-      ],
-    },
+  {
+    icon: <Briefcase />,
+    company: "PT Cyberindo Aditama (CBN) — Technology Development Division",
+    role: "Data Engineer Intern",
+    period: "Feb 2026 – Present",
+    description: [
+      "Maintaining 4 automated data pipelines that run daily across all 13 branches, covering customer records, network traffic logs, a churn-prediction model, and communication analytics.",
+      "Designed an AI agent-driven data migration system that maps and migrates production data from 13+ branch-specific schemas into a single target PostgreSQL schema, including a confidence-scored mapping protocol, automated multi-layer data validation, and a cross-branch key-collision policy. Cut migration time per module from 1-2 months to 1-2 weeks.",
+      "Set up GitLab version control for all NiFi data pipelines, replacing an older tool, NiFi Registry Standalone, that Apache has deprecated. This gives the team a full history of changes, the ability to undo a bad change instantly, and separate environments for testing, staging, and production.",
+      "Conducted an OpenSearch proof-of-concept for a new coverage search engine and built a deduplication automation layer for the CDN pipeline.",
+    ],
+  },
+  {
+    icon: <Briefcase />,
+    company: "Timedoor Academy",
+    role: "Programming Teacher",
+    period: "September 2025 – January 2026",
+    description: [
+      "Taught fundamental programming concepts using Python, Scratch, and Roblox to a diverse age range of students (5-18) in small classes of 4-5.",
+      "Excelled at simplifying complex technical topics and adapting teaching methods to different learning levels and age groups.",
+    ],
+  },
   {
     icon: <School />,
     company: "Binus Student Learning Community",
     role: "Manager of IT Development",
-    period: "February 2025 – Present",
+    period: "February 2025 – January 2026",
     description: [
       "Led a team of 10+ developers, overseeing technical architecture and project execution from start to finish.",
       "Drove system improvements for key organizational web platforms, enhancing functionality and performance.",

@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
+
+A modern personal portfolio website built with Next.js, React, TypeScript, and Tailwind CSS. The site highlights professional experience, selected projects, skills, and contact information through a polished, animated interface.
+
+## Features
+
+- Responsive one-page portfolio layout
+- Animated section transitions and motion effects
+- Interactive project showcase with modal detail views
+- Clean, modern UI with a dark theme
+- Built with the latest Next.js App Router architecture
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Radix UI primitives
+- Lucide React icons
+- Geist font
+
+## Project Structure
+
+```text
+src/
+  app/                # App Router pages and global styles
+  components/         # Reusable UI sections and page components
+  lib/                # Utility helpers
+public/               # Static assets and project media
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18 or newer
+- npm, pnpm, yarn, or bun
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+Run the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Start Production Server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+## Customizing Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can update the main portfolio content by editing the section components in the src/components folder, especially:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- src/components/hero-section.tsx
+- src/components/experience-section.tsx
+- src/components/selected-projects.tsx
+- src/components/skills-section.tsx
+- src/components/footer.tsx
+
+## Deployment
+
+This project is ready to deploy on platforms such as Vercel, Netlify, or any Node.js-compatible hosting provider.
+
+For Vercel deployment, the standard Next.js workflow applies:
+
+```bash
+npm run build
+```
+
+## License
+
+This project is for personal use and portfolio purposes.
